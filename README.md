@@ -8,10 +8,8 @@ https://drive.google.com/file/d/1dK0JhkUuWg-oTfPda8DOg_UDiLsMcVXb/view?usp=shari
 
 #### Ignoring X and Y, batch 1 tested 9 different networks with the following number of hidden layers and units per layer:
 
-5,5,5,5,5
-
-5,5,5,5
-
+[5,5,5,5,5]
+[5,5,5,5]
 5,5,5
 
 5,5
