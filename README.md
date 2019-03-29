@@ -11,7 +11,8 @@ Network 1:
    basic architectures. Vary the number of hidden layers, units per layer,
    learning rate and number of iterations enough to get a good feel for
    different behavior and in different circumstances. No dev or test sets included,
-   only testing behavior of training set"""
+   only testing behavior of training set.
+   Uses batch gradient descent."""
 
 Network 2:
 """The purpose of this network is to take a smattering of models from network_1
@@ -19,7 +20,14 @@ Network 2:
    models inherently generalize better? But then.... if all models converge to the
    same cost... should we expect performance to be different between any of them??
    Gosh that's a good question. Lots of really interesting questions going on here.
-   80/10/10 splits for sets."""
+   80/10/10 splits for sets.
+   Uses batch gradient descent."""
+   
+Network 3:
+"""The purpose of this network is to try to speed up
+   learning on bigger images using the last version
+   of network_2.
+   Uses batch gradient descent but also includes minibatch."""
    
    
    
@@ -29,6 +37,7 @@ Network 2:
 # Network 1
 
 ## Batch 1
+*Data: Small color images*
 *Batch Settings: Batch 1 tested a learning rate of .05 at 100,000 iterations on 9 different networks with the following number of hidden layers and units per layer:*
 
 [5,5,5,5,5], [5,5,5,5], [5,5,5], [5,5], [10,5], [50,5], [50,10], [5,50], [50,50]
@@ -55,6 +64,7 @@ The plots are unlabeled. Training cost is on the vertical axis. Iterations are o
 
 
 ## Batch 2
+*Data: Small color images*
 *Batch Settings: This batch tests a higher learning rate of .1 with everything else being the same as Batch 1*
 
 #### Take aways:
@@ -68,6 +78,7 @@ So... im curious with batch gradient descent how... cost can be flat for thousan
 
 
 ## Batch 3
+*Data: Small color images*
 * Batch Settings: This batch tests a .05 learning over 100,000 iterations on 6 different networks with the following number of hidden layers and units per layer, with the last having no hidden layers, just a single logistic unit:*
 
 [5], [20], [50], [100], [1000], [] <-- single logistic unit, no hidden layers
@@ -88,6 +99,7 @@ So... im curious with batch gradient descent how... cost can be flat for thousan
 
 
 ## Batch 4
+*Data: Small color images*
 *Batch Settings: This batch tests a higher learning rate of .1 with everything else being the same as Batch 3*
 
 
@@ -161,3 +173,21 @@ So... im curious with batch gradient descent how... cost can be flat for thousan
 ![alt_text](https://imgur.com/GJd6clz.png)
 
 
+
+
+
+# Network 3
+
+## Batch 1
+*Data: Large B/Q images*
+*Batch Settings: Network 3 Batch 1 has a variety of learning rates with a single hidden layer with 10 units as well as a minibatch 
+
+
+![alt_text](https://imgur.com/hP4HAxn.png)
+
+
+
+
+
+*Data: Large B/W images*
+*Batch Settings: The network sizes were the same as above. I only tried using larger images because smaller B/W images were turning to NaNs in training.
