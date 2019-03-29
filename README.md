@@ -1,18 +1,29 @@
 # Vanilla-Neural-Nets
 
-The purpose of this repository is to demonstrate a hand built network and explore basic questions relating to architecture and performance. This repository contains three basic networks with several variants, or batches.
+The purpose of this repository is to demonstrate a hand built network and explore basic questions relating to architecture and performance. Data for the networks are pictures of a slinky and an erasor and I trained the networks to recognize the difference between the two. This repository contains three basic networks with several variants, or batches. Training data is available here:
+https://drive.google.com/file/d/1dK0JhkUuWg-oTfPda8DOg_UDiLsMcVXb/view?usp=sharing
+
 
 ### Network 1
 
-#### Batch 1 tested 9 different networks with the following number of hidden layers and units per layer:
+#### Ignoring X and Y, batch 1 tested 9 different networks with the following number of hidden layers and units per layer:
+
 5,5,5,5,5
+
 5,5,5,5
+
 5,5,5
+
 5,5
+
 10,5
+
 50,5
+
 50,10
+
 5,50
+
 50,50
 
 All had a learning rate of .05 with 100,000 iterations.
@@ -29,17 +40,12 @@ All had a learning rate of .05 with 100,000 iterations.
     
     d) Although a different run with different initializations moved it a bit, I'm surprised the 9th model optimizes before the 8th considering it is so much smaller. ..
     
-          i) layer_dims_8 = [2100, 5, 50, 1]
+      i) layer_dims_8 = [2100, 5, 50, 1]
           
-          ii)layer_dims_9 = [2100, 50, 50, 1]
+      ii)layer_dims_9 = [2100, 50, 50, 1]
           
-          
+The plots are unlabeled. Training cost is on the vertical axis. Iterations are on X. Individual models are identified by color as highlighted in the top right legend.
+
 ![alt_text](https://imgur.com/hsTR7YV.png)
 
 
-
-
-
-
-All data can be viewed here
-https://drive.google.com/file/d/1dK0JhkUuWg-oTfPda8DOg_UDiLsMcVXb/view?usp=sharing
