@@ -7,7 +7,7 @@ https://drive.google.com/file/d/1dK0JhkUuWg-oTfPda8DOg_UDiLsMcVXb/view?usp=shari
 # Network 1
 
 ## Batch 1
-*Batch Settings: Batch 1 tested a learning rate of .05 at 100,000 iterations on 9 different networks with the following number of hidden layers and units per layer:
+*Batch Settings: Batch 1 tested a learning rate of .05 at 100,000 iterations on 9 different networks with the following number of hidden layers and units per layer:*
 
 [5,5,5,5,5], [5,5,5,5], [5,5,5], [5,5], [10,5], [50,5], [50,10], [5,50], [50,50]
 
@@ -33,7 +33,7 @@ The plots are unlabeled. Training cost is on the vertical axis. Iterations are o
 
 
 ## Batch 2
-*Batch Settings: This batch tests a higher learning rate of .1 with everything else being the same as Batch 1
+*Batch Settings: This batch tests a higher learning rate of .1 with everything else being the same as Batch 1*
 
 #### Take aways:
 
@@ -46,7 +46,7 @@ So... im curious with batch gradient descent how... cost can be flat for thousan
 
 
 ## Batch 3
-* Batch Settings: This batch tests a .05 learning over 100,000 iterations on 6 different networks with the following number of hidden layers and units per layer, with the last having no hidden layers, just a single logistic unit:
+* Batch Settings: This batch tests a .05 learning over 100,000 iterations on 6 different networks with the following number of hidden layers and units per layer, with the last having no hidden layers, just a single logistic unit:*
 
 [5], [20], [50], [100], [1000], [] <-- single logistic unit, no hidden layers
 
@@ -65,8 +65,22 @@ So... im curious with batch gradient descent how... cost can be flat for thousan
 
 
 
+## Batch 4
+*Batch Settings: This batch tests a higher learning rate of .1 with everything else being the same as Batch 3*
 
 
+#### Take aways:
+
+1) Convergence was only slightly faster for all but one, but VERY noisy, which is not great.
+
+   a) The really interesting thing is that a .1 learning rate (seems) to have had a better effect for larger than smaller networks.
+      It seems to have created less noise (though maybe I wasn't zoomed in far enough to see it). But it definitely sped up learning more
+      (though I think it was already at some optimally fast level for the smaller networks).
+      
+2) Overall, not preferable to the .05 learning rate on the same networks, but still good to see this visually.
+
+
+![alt_text](https://imgur.com/mV41Al0.png)
 
 
 
