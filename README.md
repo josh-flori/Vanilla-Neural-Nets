@@ -7,7 +7,7 @@ https://drive.google.com/file/d/1dK0JhkUuWg-oTfPda8DOg_UDiLsMcVXb/view?usp=shari
 # Network 1
 
 ## Batch 1
-Batch 1 tested a learning rate of .05 at 100,000 iterations on 9 different networks with the following number of hidden layers and units per layer:
+*Batch Settings: Batch 1 tested a learning rate of .05 at 100,000 iterations on 9 different networks with the following number of hidden layers and units per layer:
 
 [5,5,5,5,5], [5,5,5,5], [5,5,5], [5,5], [10,5], [50,5], [50,10], [5,50], [50,50]
 
@@ -33,10 +33,44 @@ The plots are unlabeled. Training cost is on the vertical axis. Iterations are o
 
 
 ## Batch 2
-Batch 1 tested a higher learning rate of .1 with everything else being the same as Batch 1
+*Batch Settings: This batch tests a higher learning rate of .1 with everything else being the same as Batch 1
 
 #### Take aways:
 
 1) When you increase the learning rate it speeds up learning. My rate is .1 which seems very large compared to stuff I've seen online so I'm not sure what the difference is in terms of why I can use it without seeming consequence but it's a general bad idea.
 
 So... im curious with batch gradient descent how... cost can be flat for thousands of iterations then suddenly get not flat. how does it move if it's completely flat? but it looks like the more layers the longer it takes to descend, or rather, the longer the plateus are... but what about same number of layers and larger number of neurons?
+
+
+![alt_text](https://imgur.com/alM8OiT.png)
+
+
+## Batch 3
+* Batch Settings: This batch tests a .05 learning over 100,000 iterations on 6 different networks with the following number of hidden layers and units per layer, with the last having no hidden layers, just a single logistic unit:
+
+[5], [20], [50], [100], [1000], [] <-- single logistic unit, no hidden layers
+
+
+#### Take aways:
+
+1) Some really interesting things happening here...
+    a) First of all, all of these are billions of times faster than the previous models... and this isn't even a fast learning rate or highly optimized! (I drastically shortened the x axis in the plot to account for this)
+    b) So let me get this right.... when it comes to having 2 hidden layers, the MORE neurons there are, the FEWER iterations it takes to begin descending but the longer the iterations take, with 1,000 neurons taking a hella long time, many many times longer than the others
+    c) But NONE of the models are NEARLY as fast at descending as just the logistic unit alone. But it has some weird noise, I wonder if it's because it's dumber
+    d) Perhaps similar to the logistic unit, the model with only 5 neurons had a weird squiggle, maybe more neurons help smooth out the function, or something...
+
+2) I would be curious if the whole "more neurons in a layer = fewer iterations to descend" is true across the board, or in what circumstances
+
+![alt_text](https://imgur.com/Z78ISTG.png)
+
+
+
+
+
+
+
+
+
+
+
+
