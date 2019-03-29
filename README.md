@@ -8,21 +8,7 @@ https://drive.google.com/file/d/1dK0JhkUuWg-oTfPda8DOg_UDiLsMcVXb/view?usp=shari
 
 #### Ignoring X and Y, batch 1 tested 9 different networks with the following number of hidden layers and units per layer:
 
-[5,5,5,5,5]
-[5,5,5,5]
-5,5,5
-
-5,5
-
-10,5
-
-50,5
-
-50,10
-
-5,50
-
-50,50
+[5,5,5,5,5], [5,5,5,5], [5,5,5], [5,5], [10,5], [50,5], [50,10], [5,50], [50,50]
 
 All had a learning rate of .05 with 100,000 iterations.
 
