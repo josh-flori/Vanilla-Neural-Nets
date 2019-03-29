@@ -4,6 +4,28 @@ The purpose of this repository is to demonstrate a hand built network and explor
 https://drive.google.com/file/d/1dK0JhkUuWg-oTfPda8DOg_UDiLsMcVXb/view?usp=sharing
 
 
+#### Basic Overview of Networks:
+Network 1:
+"""The purpose of this network is to use the functions created in the class
+   on my own data. And with those functions and data, explore a variety of
+   basic architectures. Vary the number of hidden layers, units per layer,
+   learning rate and number of iterations enough to get a good feel for
+   different behavior and in different circumstances. No dev or test sets included,
+   only testing behavior of training set"""
+
+Network 2:
+"""The purpose of this network is to take a smattering of models from network_1
+   and explore train/dev/test sets, vary splits and view performance. Do different
+   models inherently generalize better? But then.... if all models converge to the
+   same cost... should we expect performance to be different between any of them??
+   Gosh that's a good question. Lots of really interesting questions going on here.
+   80/10/10 splits for sets."""
+   
+   
+   
+   
+
+
 # Network 1
 
 ## Batch 1
@@ -84,7 +106,35 @@ So... im curious with batch gradient descent how... cost can be flat for thousan
 
 
 
+# Network 2
+
+## Batch 1
+*Batch Settings: Network 2 Batch 1 has the same settings as Batch 3 from Network 1, which has a learning rate of .05 at 100,000 iterations on 6 different networks with the following number of hidden layers and units per layer, with the last having no hidden layers, just a single logistic unit:*
+
+[5], [20], [50], [100], [1000], [] <-- single logistic unit, no hidden layers
+
+#### Take aways:
+
+1) Learning rates were about the exact same as Batch 3 from network 1. Dev/Test set performance was perfect.
 
 
 
+## Batch 2
+*Batch Settings: The network sizes were the same as above, but I tested learning rates from .0001 down to .000001. I finished with .00001 and the plot shown below is with that learning rate for the networks and .0000005 for the logistic unit. 
 
+
+#### Take aways:
+
+1) Learning rates...
+   a) First of all, ALL of these require much smaller learning rates than the colored images. That makes me think that smaller dimensional inputs are simpler solution spaces requiring less time to descend or something like that idk.
+   b) For model a, learning rate of .0001 is too large (it wastes a lot of time jittering around the descent) .000001 is too small but .00001 is juuust right. Crazy!
+   c) The others are about the same but the logistic unit needs to be at .0000005 or lower which is MUCH smaller than the other ones. So not only is input smaller but the number of weights are smaller, which makes the... solution space smaller? What is a solution space? How do inputs and weights effect the time it takes to descent?
+      ^^^^ that's an important question.
+2) Learning is much slower than network 1 batch 3. I think this is because black and white images from both classes are more similar than colored images so the function is harder to learn, and as the learning rate experiment showed, learning is more figity when the learning rate is any higher than .00001. That is MUCH smaller than the .05 learning rate from network 1.
+3) Train/Dev/Test performance..
+   a) Again, all perfect performance. I think this would be different if the images were more varied.
+   
+![alt_text](https://imgur.com/0BQBWCf.png)   
+
+
+   
