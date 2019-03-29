@@ -4,15 +4,14 @@ The purpose of this repository is to demonstrate a hand built network and explor
 https://drive.google.com/file/d/1dK0JhkUuWg-oTfPda8DOg_UDiLsMcVXb/view?usp=sharing
 
 
-### Network 1
+# Network 1
 
-#### Ignoring X and Y, batch 1 tested 9 different networks with the following number of hidden layers and units per layer:
+## Batch 1
+Batch 1 tested a learning rate of .05 at 100,000 iterations on 9 different networks with the following number of hidden layers and units per layer:
 
 [5,5,5,5,5], [5,5,5,5], [5,5,5], [5,5], [10,5], [50,5], [50,10], [5,50], [50,50]
 
-All had a learning rate of .05 with 100,000 iterations.
-
-##### Take aways:
+#### Take aways:
 
 1) Performance for more than 2 hidden layers is just bad. They take a long time to optimize or (seemingly) never optimize at all as with the first 3 models
 
@@ -33,3 +32,11 @@ The plots are unlabeled. Training cost is on the vertical axis. Iterations are o
 ![alt_text](https://imgur.com/hsTR7YV.png)
 
 
+## Batch 2
+Batch 1 tested a higher learning rate of .1 with everything else being the same as Batch 1
+
+#### Take aways:
+
+1) When you increase the learning rate it speeds up learning. My rate is .1 which seems very large compared to stuff I've seen online so I'm not sure what the difference is in terms of why I can use it without seeming consequence but it's a general bad idea.
+
+So... im curious with batch gradient descent how... cost can be flat for thousands of iterations then suddenly get not flat. how does it move if it's completely flat? but it looks like the more layers the longer it takes to descend, or rather, the longer the plateus are... but what about same number of layers and larger number of neurons?
