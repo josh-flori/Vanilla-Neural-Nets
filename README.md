@@ -109,6 +109,7 @@ So... im curious with batch gradient descent how... cost can be flat for thousan
 # Network 2
 
 ## Batch 1
+*Data: Small color images*
 *Batch Settings: Network 2 Batch 1 has the same settings as Batch 3 from Network 1, which has a learning rate of .05 at 100,000 iterations on 6 different networks with the following number of hidden layers and units per layer, with the last having no hidden layers, just a single logistic unit:*
 
 [5], [20], [50], [100], [1000], [] <-- single logistic unit, no hidden layers
@@ -120,6 +121,7 @@ So... im curious with batch gradient descent how... cost can be flat for thousan
 
 
 ## Batch 2
+*Data: Small B/W images*
 *Batch Settings: The network sizes were the same as above, but I tested learning rates from .0001 down to .000001. I finished with .00001 and the plot shown below is with that learning rate for the networks and .0000005 for the logistic unit. 
 
 
@@ -137,4 +139,25 @@ So... im curious with batch gradient descent how... cost can be flat for thousan
 ![alt_text](https://imgur.com/0BQBWCf.png)   
 
 
-   
+
+## Batch 3
+*Data: Large B/W images*
+*Batch Settings: The network sizes were the same as above. I only tried using larger images because smaller B/W images were turning to NaNs in training.
+
+
+#### Take aways:
+
+1) Learning rates...
+   a) Nothing new here other than the logistic unit rate had to be reduced by a decimal place to .00000005 which is weird and contradicts my other findings which are:
+
+2) Learning time
+   a) As shown in the previous models, it looks like the larger a solution space is the longer a time it takes to learn. From network_1 Batch 1 which had large networks, those took forever.
+      Then from this network_2 with fewer layers, the B/W images took way longer still than the colored images. So why the logistic unit was so noisy at the same learning rate as version2 (which had smaller images) I don't know. May it had to do with the intializations but somehow I doubt that.
+
+3) Unlike the smaller black and white images, a couple of these smaller networks had a different solution space, you can see a plateau then a quick drop, so that's interesting.. you can sort of visualize them learning different functions. 
+
+4) Performance? Perfect, again. Small errors on dev but I chalk that up to something we can't define given the small number of images.
+
+![alt_text](https://imgur.com/GJd6clz.png)
+
+
